@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Cards/Card";
-import { data } from "../../data";
+// import { data } from "../../data";
 import CardWrapper from "../CardWrapper/CardWrapper";
 import styles from "./carusel.module.css";
 
@@ -8,7 +8,6 @@ export default function Carusel() {
   const [items, setItems] = useState([]); // Состояние для изначального списка слов
   const [position, setPosition] = useState(1);
   const [pressed, setPressed] = useState(false);
-  const { english, transcription, russian } = data[position];
   const [count, setCount] = useState(0);
 
   // Получаем данные из localStorage при загрузке компонента
@@ -17,6 +16,10 @@ export default function Carusel() {
     setItems(savedItems);
     console.log(savedItems);
   }, []);
+
+  // Проверяем текущий элемент
+  const currentItem = items[position] || {};
+  const { english, transcription, russian } = currentItem;
 
   //Посчитать и вывести количество проверенных карточек
   function handleClick() {
@@ -44,7 +47,7 @@ export default function Carusel() {
     }
   };
 
-  return (
+  return items.length > 0 ? (
     <div>
       <h1>Количество карточек, изученных сегодня: {count}</h1>
       <CardWrapper
@@ -64,5 +67,7 @@ export default function Carusel() {
         {position + 1}/{items.length}
       </div>
     </div>
+  ) : (
+    <p>Загрузка данных</p>
   );
 }
