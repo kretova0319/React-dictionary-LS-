@@ -1,0 +1,41 @@
+@import "../../variables.css";
+
+.btnTable {
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid grey;
+}
+.btnTable:hover {
+  transition: 0.4s;
+  transform: scale(1.1);
+  border: 1px solid var(--black);
+}
+
+.btnRed {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 5px 10px;
+  padding: 5px 10px;
+}
+.btnBlue {
+  background-color: var(--blue);
+  padding: 5px 10px;
+  padding: 5px 10px;
+}
+.btnYellow {
+  background-color: var(--yellow);
+  padding: 5px 17px;
+}
+.btnGreen {
+  background-color: var(--green);
+  padding: 5px 15px;
+  padding: 5px 17px;
+}
+.btnGreen {
+  background-color: var(--green);
+  padding: 5px 15px;
+}
+.btnGrassGreen {
+  background-color: var(--grassGreen);
+  padding: 5px 15px;
+}

@@ -1,0 +1,25 @@
+@import "../../variables.css";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.arrow {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--grey);
+  padding: 10px;
+}
+.arrow:hover {
+  transition: 0.8s;
+  transform: scale(1.1);
+  background-color: var(--green);
+}
+.number {
+  display: flex;
+  justify-content: center;
+}
