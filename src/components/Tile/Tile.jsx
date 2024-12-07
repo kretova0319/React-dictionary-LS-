@@ -1,10 +1,16 @@
-import React, { useState } from "react";
-import { data } from "../../data";
+import React, { useState, useEffect } from "react";
 import FlashCard from "./FlashCard";
 import style from "./tile.module.css";
 
 export default function Tile() {
+  const [items, setItems] = useState([]); // Состояние для изначального списка слов
   const [isEnglish, setisEnglish] = useState(true);
+
+  // Получаем данные из localStorage при загрузке компонента
+  useEffect(() => {
+    const savedItems = JSON.parse(localStorage.getItem("words")) || [];
+    setItems(savedItems);
+  }, []);
 
   const showEnglish = () => {
     setisEnglish(true);
@@ -27,7 +33,7 @@ export default function Tile() {
         Show all RUSSIAN
       </form>
       <div className={style.wrapper__tile}>
-        {data.map((card) => (
+        {items.map((card) => (
           <FlashCard key={card.id} {...card} />
         ))}
       </div>
