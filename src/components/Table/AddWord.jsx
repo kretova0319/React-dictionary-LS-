@@ -14,28 +14,37 @@ export default function AddWord({
   return (
     <div className={styles.newword}>
       <h2>Add new word</h2>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <input
-          type="text"
-          name="english"
-          placeholder="Enter english word"
-          value={newWordEnglish}
-          onChange={(e) => setNewWordEnglish(e.target.value)}
-        />
-        <input
-          type="text"
-          name="transcription"
-          placeholder="Enter transcription"
-          value={newWordTranscr}
-          onChange={(e) => setNewWordTranscr(e.target.value)}
-        />
-        <input
-          type="text"
-          name="russian"
-          placeholder="Enter russian word"
-          value={newWordRussian}
-          onChange={(e) => setNewWordRussian(e.target.value)}
-        />
+      <form
+        className={styles.wordsContainer}
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <div className={styles.wordContainer}>
+          <input
+            type="text"
+            name="english"
+            placeholder="Enter english word"
+            value={newWordEnglish}
+            onChange={(e) => setNewWordEnglish(e.target.value)}
+          />
+        </div>
+        <div className={styles.wordContainer}>
+          <input
+            type="text"
+            name="transcription"
+            placeholder="Enter transcription"
+            value={newWordTranscr}
+            onChange={(e) => setNewWordTranscr(e.target.value)}
+          />
+        </div>
+        <div className={styles.wordContainer}>
+          <input
+            type="text"
+            name="russian"
+            placeholder="Enter russian word"
+            value={newWordRussian}
+            onChange={(e) => setNewWordRussian(e.target.value)}
+          />
+        </div>
         <Button text="Add" color="btnGrassGreen" handler={handleAdd} />
       </form>
     </div>
