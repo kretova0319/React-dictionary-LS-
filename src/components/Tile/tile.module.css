@@ -14,6 +14,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .grey {
   background-color: var(--grey);
@@ -31,6 +32,7 @@
   margin-top: 90px;
   font-weight: bold;
 }
+
 .flash__btn {
   position: relative;
   left: 70px;
