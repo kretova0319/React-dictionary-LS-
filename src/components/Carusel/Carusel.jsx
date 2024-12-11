@@ -6,7 +6,9 @@ import styles from "./carusel.module.css";
 
 export default function Carusel() {
   const [items, setItems] = useState([]); // Состояние для изначального списка слов
-  const [position, setPosition] = useState(1);
+
+  const [position, setPosition] = useState(0);
+
   const [pressed, setPressed] = useState(false);
   const [count, setCount] = useState(0);
 
@@ -14,7 +16,6 @@ export default function Carusel() {
   useEffect(() => {
     const savedItems = JSON.parse(localStorage.getItem("words")) || [];
     setItems(savedItems);
-    console.log(savedItems);
   }, []);
 
   // Проверяем текущий элемент
