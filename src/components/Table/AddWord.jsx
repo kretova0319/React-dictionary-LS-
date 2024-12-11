@@ -50,6 +50,7 @@ export default function AddWord({ newWord, setNewWord, handleAdd }) {
           {inputErrorText.english && isInputError.english && (
             <p className={styles.error}>{inputErrorText.english}</p>
           )}
+
         </div>
         <div className={styles.wordContainer}>
           <input
@@ -62,6 +63,7 @@ export default function AddWord({ newWord, setNewWord, handleAdd }) {
           {inputErrorText.transcription && isInputError.transcription && (
             <p className={styles.error}>{inputErrorText.transcription}</p>
           )}
+
         </div>
         <div className={styles.wordContainer}>
           <input
@@ -81,6 +83,7 @@ export default function AddWord({ newWord, setNewWord, handleAdd }) {
           handler={handleAdd}
           handleDisabled={isDisabled}
         />
+
       </form>
     </div>
   );

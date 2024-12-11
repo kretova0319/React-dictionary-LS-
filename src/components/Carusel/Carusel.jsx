@@ -6,7 +6,9 @@ import styles from "./carusel.module.css";
 
 export default function Carusel() {
   const [items, setItems] = useState([]); // Состояние для изначального списка слов
+
   const [position, setPosition] = useState(0);
+
   const [pressed, setPressed] = useState(false);
   const [count, setCount] = useState(0);
 
